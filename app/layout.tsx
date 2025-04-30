@@ -5,7 +5,7 @@ import Footer from '@/components/footer'
 import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata = {
-  title: 'My Personal Blog',
+  title: 'Blog',
   description: 'A personal blog connected with Notion',
 }
 
@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className="bg-black text-white min-h-screen flex flex-col">
         <ThemeProvider defaultTheme="dark">

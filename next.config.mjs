@@ -19,6 +19,8 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['@notionhq/client'],
   },
+  output: 'export',
+  trailingSlash: true,
 }
 
 export default nextConfig

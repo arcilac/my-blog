@@ -1,9 +1,16 @@
-import { getPostBySlug } from '@/lib/notion'
+import { getAllPosts, getPostBySlug } from '@/lib/notion-api'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { Calendar, Tag } from 'lucide-react'
 import { NotionRenderer } from '@/components/notion-renderer'
 import '../../pages.css'
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   let post

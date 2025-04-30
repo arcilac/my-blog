@@ -1,13 +1,26 @@
 import BlogCard from '@/components/blog-card'
-import { getAllPosts } from '@/lib/notion'
+import { getAllPosts } from '@/lib/notion-api'
 import Link from 'next/link'
 import '../pages.css'
+import { Post } from '@/lib/types'
 
 export default async function BlogPage() {
-  let posts: { id: string; [key: string]: any }[] = []
+  let posts: Post[] = []
 
   try {
-    posts = await getAllPosts()
+    const fetchedPosts = await getAllPosts()
+
+    posts = fetchedPosts.map(
+      (post) =>
+        ({
+          title: post.title || '',
+          publishedDate: post.publishedDate || '',
+          excerpt: post.excerpt || '',
+          slug: post.slug || '',
+          coverImage: post.coverImage || undefined,
+          tags: post.tags || [],
+        } as Post),
+    )
   } catch (error) {
     console.error('Error fetching posts from Notion:', error)
   }
@@ -22,7 +35,7 @@ export default async function BlogPage() {
         {posts.length > 0 ? (
           <div className="blog-grid">
             {posts.map((post) => (
-              <BlogCard key={post.id} post={post} />
+              <BlogCard key={post.slug} post={post} />
             ))}
           </div>
         ) : (
