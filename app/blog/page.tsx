@@ -1,6 +1,6 @@
 import BlogCard from '@/components/blog-card'
 import { getAllPosts } from '@/lib/notion-api'
-import CustomLink from '@/components/custom-link'
+import Link from 'next/link'
 import '../pages.css'
 import { Post } from '@/lib/types'
 
@@ -45,9 +45,9 @@ export default async function BlogPage() {
               No entries found in your Notion database. Make sure you have published posts in your
               Notion database.
             </p>
-            <CustomLink href="/" className="btn btn-primary">
+            <Link href="/" className="btn btn-primary">
               Return Home
-            </CustomLink>
+            </Link>
           </div>
         )}
       </div>
