@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import CustomLink from '@/components/custom-link'
 import { ArrowRight } from 'lucide-react'
 import './pages.css'
 
@@ -15,9 +15,9 @@ export default async function Home() {
             <p className="hero-subtitle">
               Thoughts, ideas, and explorations on technology and design
             </p>
-            <Link href="/blog" className="btn btn-primary">
+            <CustomLink href="/blog" className="btn btn-primary">
               Read All Posts <ArrowRight className="h-4 w-4 ml-2" />
-            </Link>
+            </CustomLink>
           </div>
         </div>
       </section>
