@@ -4,16 +4,39 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --muted: #f9f9f9;
+  --muted-foreground: #555555;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --primary-gradient: linear-gradient(to right, #8b5cf6, #ec4899);
+  --primary-foreground: #ffffff;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #9ca3af;
+  --border: #1f2937;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --primary-gradient: linear-gradient(to right, #9a4ce7, #db2777);
+  --primary-foreground: #ffffff;
+}
+
 html {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 body {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -64,6 +87,7 @@ button {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  background-image: var(--primary-gradient);
 }
 
 /* Container styles */
@@ -114,43 +138,31 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(to right, #8b5cf6, #ec4899);
-  color: white;
+  background: var(--primary-gradient);
+  color: var(--primary-foreground);
 }
 
 .btn-primary:hover {
   opacity: 0.9;
 }
 
-/* Force dark mode styles */
-.bg-black {
-  background-color: #000 !important;
+/* Utility classes that respect theme */
+.bg-primary {
+  background-color: var(--background);
 }
 
-.bg-gray-900 {
-  background-color: #111 !important;
+.bg-secondary {
+  background-color: var(--muted);
 }
 
-.bg-gray-800 {
-  background-color: #1a1a1a !important;
+.text-primary {
+  color: var(--foreground);
 }
 
-.text-white {
-  color: #fff !important;
+.text-secondary {
+  color: var(--muted-foreground);
 }
 
-.text-gray-300 {
-  color: #d1d5db !important;
-}
-
-.text-gray-400 {
-  color: #9ca3af !important;
-}
-
-.text-purple-400 {
-  color: #c084fc !important;
-}
-
-.border-gray-800 {
-  border-color: #1f2937 !important;
+.border-primary {
+  border-color: var(--border);
 }

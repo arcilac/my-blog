@@ -7,18 +7,18 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["www.notion.so", "notion.so"],
+    domains: ['www.notion.so', 'notion.so'],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**",
+        protocol: 'https',
+        hostname: '**',
       },
     ],
     unoptimized: true,
   },
   experimental: {
-    serverComponentsExternalPackages: ["@notionhq/client"],
+    serverComponentsExternalPackages: ['@notionhq/client'],
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
