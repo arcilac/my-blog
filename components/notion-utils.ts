@@ -2,7 +2,10 @@ import type { NotionBlock } from '@/lib/types'
 
 export function formatText(text: string) {
   if (!text) return ''
+
   text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+  text = text.replace(/`(.*?)`/g, '<code class="inline-code">$1</code>')
+
   return text
 }
 
