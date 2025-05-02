@@ -19,4 +19,8 @@ if (typeof process !== 'undefined' && process.env.NOTION_API_KEY) {
   }
 }
 
+export function isNotionReady() {
+  return !!notion && !!databaseId
+}
+
 export { notion, databaseId }
