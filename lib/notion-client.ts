@@ -12,10 +12,10 @@ if (typeof process !== 'undefined' && process.env.NOTION_API_KEY) {
     databaseId = process.env.NOTION_DATABASE_ID
 
     if (!databaseId) {
-      console.warn('NOTION_DATABASE_ID no está definido en las variables de entorno')
+      console.warn('NOTION_DATABASE_ID is not defined in the environment variables.')
     }
   } catch (error) {
-    console.error('Error al inicializar el cliente de Notion:', error)
+    console.error('Error initializing the Notion client:', error)
   }
 }
 

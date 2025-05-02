@@ -2,14 +2,11 @@
   "name": "my-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arcilac.github.io/my-blog/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint": "next lint"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.14",
