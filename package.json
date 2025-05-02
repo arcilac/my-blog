@@ -2,7 +2,7 @@
   "name": "my-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Arcilac/my-blog",
+  "homepage": "https://arcilac.github.io/my-blog",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

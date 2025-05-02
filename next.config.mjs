@@ -20,6 +20,8 @@ const nextConfig = {
     serverComponentsExternalPackages: ['@notionhq/client'],
   },
   output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/my-blog' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/my-blog/' : '',
   trailingSlash: true,
 }
 
