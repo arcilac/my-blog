@@ -5,20 +5,28 @@ import { Post } from '@/lib/types'
 import './components.css'
 
 export default function BlogCard({ post }: { post: Post }) {
+  const basePath = '/my-blog'
+  const blogLink = `${basePath}/blog/${post.slug}`
+
+  const imageUrl = post.coverImage
+    ? post.coverImage.startsWith('http')
+      ? post.coverImage
+      : `${basePath}${post.coverImage.startsWith('/') ? post.coverImage : `/${post.coverImage}`}`
+    : `${basePath}/placeholder.svg`
+
   return (
-    <Link href={`/blog/${post.slug}`} className="blog-card-wrapper">
+    <Link href={blogLink} className="blog-card-wrapper">
       <div className="blog-card">
         {post.coverImage && (
           <div className="blog-card-image">
             <Image
-              src={post.coverImage || '/placeholder.svg'}
+              src={imageUrl}
               alt={post.title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               loading="lazy"
-              placeholder="blur"
-              blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjwvc3ZnPg=="
+              unoptimized={true}
             />
           </div>
         )}

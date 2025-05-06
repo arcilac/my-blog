@@ -7,12 +7,16 @@ interface CustomLinkProps extends LinkProps {
 }
 
 export default function CustomLink({ href, children, className, ...props }: CustomLinkProps) {
-  const basePath = process.env.NODE_ENV === 'production' ? '/my-blog' : ''
+  const basePath = '/my-blog'
 
   const isInternalLink =
     typeof href === 'string' && !href.startsWith('http') && !href.startsWith('#')
 
-  const finalHref = isInternalLink ? `${basePath}${href}` : href
+  const finalHref = isInternalLink
+    ? href.startsWith(basePath)
+      ? href
+      : `${basePath}${href.startsWith('/') ? href : `/${href}`}`
+    : href
 
   return (
     <Link href={finalHref} className={className} {...props}>
