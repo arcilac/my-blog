@@ -20,9 +20,10 @@ exec('npm run build', (error, stdout, stderr) => {
   console.log('Archivo .nojekyll creado')
 
   console.log('Desplegando a GitHub Pages...')
-  exec('npx gh-pages -d out -t true', (deployError, deployStdout, deployStderr) => {
+  exec('npx gh-pages -d out -t', (deployError, deployStdout, deployStderr) => {
     if (deployError) {
       console.error(`Error al desplegar: ${deployError}`)
+      console.error(deployStderr)
       return
     }
     console.log('Despliegue completado con éxito')
