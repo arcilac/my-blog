@@ -7,7 +7,7 @@ interface CustomLinkProps extends LinkProps {
 }
 
 export default function CustomLink({ href, children, className, ...props }: CustomLinkProps) {
-  const basePath = '/my-blog'
+  const basePath = '/'
 
   const isInternalLink =
     typeof href === 'string' && !href.startsWith('http') && !href.startsWith('#')
