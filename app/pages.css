@@ -50,7 +50,6 @@
   animation: fade-in-up 0.5s ease-out;
 }
 
-/* Blog List Page Styles */
 .blog-page {
   min-height: 100vh;
   padding: 4rem 0;
@@ -327,7 +326,9 @@
   border-radius: 0;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .search-input:focus {
@@ -358,4 +359,14 @@
   .search-icon {
     margin-bottom: 0;
   }
+}
+
+:root[class~='dark'] .search-input {
+  border-color: #444;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+:root[class~='dark'] .search-input::placeholder {
+  color: #888;
 }
