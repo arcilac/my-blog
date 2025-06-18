@@ -8,7 +8,6 @@ Here you'll find content about technologies like JavaScript, React, Node.js, and
 Feel free to explore and follow along!
 
 👉 **View the blog here:** [https://arcilac.github.io/my-blog/](https://arcilac.github.io/my-blog/)  
-_(Replace with your actual link)_
 
 ---
 
