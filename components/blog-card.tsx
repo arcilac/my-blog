@@ -5,7 +5,7 @@ import { Post } from '@/lib/types'
 import './components.css'
 
 export default function BlogCard({ post }: { post: Post }) {
-  const basePath = '/'
+  const basePath = ''
   const blogLink = `${basePath}/blog/${post.slug}`
 
   const imageUrl = post.coverImage
