@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="navbar-container">
         <Link href="/" className="navbar-logo">
-          Cami's Blog
+          Cami's blog
         </Link>
 
         <nav className="navbar-nav hidden md:flex">
