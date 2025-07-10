@@ -1,4 +1,4 @@
-# Tech Blog by Camila Arcila
+# Tech blog by Camila Arcila
 
 Welcome to my personal tech blog! 🧠💻
 
@@ -16,7 +16,7 @@ Feel free to explore and follow along!
 - JavaScript, TypeScript, React, Node.js
 - Productivity tips for developers
 
-## About Me
+## About me
 I'm a Full Stack Web Developer with a passion for clean code and continuous learning.  
 I write to document my journey and help others along the way.
 
