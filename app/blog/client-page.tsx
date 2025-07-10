@@ -33,7 +33,7 @@ export default function BlogPageClient({ initialPosts }: { initialPosts: Post[] 
     <main className="blog-page">
       <div className="container mx-auto px-4">
         <h1 className="blog-list-title">
-          <span className="text-gradient">All Blog Posts</span>
+          <span className="text-gradient">All blog posts</span>
         </h1>
 
         <div className="search-section">

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="footer-content md:flex-row">
           <div className="footer-brand md:text-left">
             <Link href="/" className="footer-logo">
-              Cami's Blog
+              Cami's blog
             </Link>
             <p className="footer-tagline">Personal thoughts and explorations</p>
           </div>

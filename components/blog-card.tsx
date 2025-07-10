@@ -51,7 +51,7 @@ export default function BlogCard({ post }: { post: Post }) {
           </div>
 
           <div className="blog-card-link">
-            Read More <ArrowRight className="h-3 w-3" />
+            Read more <ArrowRight className="h-3 w-3" />
           </div>
         </div>
       </div>
