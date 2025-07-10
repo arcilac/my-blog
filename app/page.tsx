@@ -10,13 +10,13 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="hero-content animate-fade-in-down">
             <h1 className="hero-title">
-              <span className="text-gradient">My Personal Blog</span>
+              <span className="text-gradient">My personal blog</span>
             </h1>
             <p className="hero-subtitle">
               Thoughts, ideas, and explorations on technology and design
             </p>
             <CustomLink href="/blog" className="btn btn-primary">
-              Read All Posts <ArrowRight className="h-4 w-4 ml-2" />
+              Read all posts <ArrowRight className="h-4 w-4 ml-2" />
             </CustomLink>
           </div>
         </div>
