@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useEffect, type ChangeEvent } from 'react'
 import BlogCard from '@/components/blog-card'
 import Link from 'next/link'

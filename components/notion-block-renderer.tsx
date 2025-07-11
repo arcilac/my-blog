@@ -1,4 +1,3 @@
-'use client'
 import {
   ParagraphBlock,
   Heading1Block,
@@ -7,7 +6,6 @@ import {
   QuoteBlock,
   DividerBlock,
   DefaultBlock,
-  ListRenderer,
 } from './notion-text-blocks'
 import { CodeBlock, ImageBlock, ToDoBlock, ToggleBlock } from './notion-media-blogs'
 import { TableBlock } from './notion-table-blocks'

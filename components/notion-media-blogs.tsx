@@ -1,4 +1,3 @@
-'use client'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import type { NotionBlock } from '@/lib/types'

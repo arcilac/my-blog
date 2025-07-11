@@ -1,4 +1,3 @@
-'use client'
 import type { NotionBlock } from '@/lib/types'
 import { notionStyles } from './notion-styles'
 import { formatText } from './notion-utils'
