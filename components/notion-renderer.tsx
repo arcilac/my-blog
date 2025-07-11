@@ -1,5 +1,3 @@
-'use client'
-import type { NotionBlock } from '@/lib/types'
 import { notionStyles } from './notion-styles'
 import { groupBlocks } from './notion-utils'
 import { BlockRenderer } from './notion-block-renderer'

@@ -1,4 +1,3 @@
-'use client'
 import type { NotionBlock } from '@/lib/types'
 import { notionStyles } from './notion-styles'
 import { formatText, formatTitleCase } from './notion-utils'
@@ -14,14 +13,14 @@ export function ParagraphBlock({ block }: { block: NotionBlock }) {
     />
   ) : (
     <p key={id} style={notionStyles.emptyParagraph}>
-      Párrafo
+      Paragraph
     </p>
   )
 }
 
 export function Heading1Block({ block }: { block: NotionBlock }) {
   const { id, content } = block
-  const formattedContent = formatTitleCase(content || 'Encabezado 1')
+  const formattedContent = formatTitleCase(content || 'Header 1')
 
   return (
     <h1
@@ -34,7 +33,7 @@ export function Heading1Block({ block }: { block: NotionBlock }) {
 
 export function Heading2Block({ block }: { block: NotionBlock }) {
   const { id, content } = block
-  const formattedContent = formatTitleCase(content || 'Encabezado 2')
+  const formattedContent = formatTitleCase(content || 'Header 2')
 
   return (
     <h2
@@ -47,7 +46,7 @@ export function Heading2Block({ block }: { block: NotionBlock }) {
 
 export function Heading3Block({ block }: { block: NotionBlock }) {
   const { id, content } = block
-  const formattedContent = formatTitleCase(content || 'Encabezado 3')
+  const formattedContent = formatTitleCase(content || 'Header 3')
 
   return (
     <h3
@@ -92,7 +91,7 @@ export function DefaultBlock({ block }: { block: NotionBlock }) {
   if (['paragraph', 'heading_1', 'heading_2', 'heading_3', 'quote'].includes(type)) {
     return (
       <div key={id} style={notionStyles.unavailableContent}>
-        Contenido no disponible
+        Content unavailable
       </div>
     )
   }

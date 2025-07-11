@@ -1,6 +1,6 @@
 import { NotionToMarkdown } from 'notion-to-md'
 import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
-import type { MdBlock, NotionPost } from './types'
+import type { NotionPost } from './types'
 import { notion } from './notion-client'
 import { formatTitleCase } from '../components/notion-utils'
 
