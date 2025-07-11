@@ -1,7 +1,7 @@
 'use client'
 import type { NotionBlock } from '@/lib/types'
 import { notionStyles } from './notion-styles'
-import { formatText } from './notion-utils'
+import { formatText, formatTitleCase } from './notion-utils'
 
 export function ParagraphBlock({ block }: { block: NotionBlock }) {
   const { id, content } = block
@@ -21,36 +21,39 @@ export function ParagraphBlock({ block }: { block: NotionBlock }) {
 
 export function Heading1Block({ block }: { block: NotionBlock }) {
   const { id, content } = block
+  const formattedContent = formatTitleCase(content || 'Encabezado 1')
 
   return (
     <h1
       key={id}
       style={notionStyles.heading1}
-      dangerouslySetInnerHTML={{ __html: formatText(content || 'Encabezado 1') }}
+      dangerouslySetInnerHTML={{ __html: formatText(formattedContent) }}
     />
   )
 }
 
 export function Heading2Block({ block }: { block: NotionBlock }) {
   const { id, content } = block
+  const formattedContent = formatTitleCase(content || 'Encabezado 2')
 
   return (
     <h2
       key={id}
       style={notionStyles.heading2}
-      dangerouslySetInnerHTML={{ __html: formatText(content || 'Encabezado 2') }}
+      dangerouslySetInnerHTML={{ __html: formatText(formattedContent) }}
     />
   )
 }
 
 export function Heading3Block({ block }: { block: NotionBlock }) {
   const { id, content } = block
+  const formattedContent = formatTitleCase(content || 'Encabezado 3')
 
   return (
     <h3
       key={id}
       style={notionStyles.heading3}
-      dangerouslySetInnerHTML={{ __html: formatText(content || 'Encabezado 3') }}
+      dangerouslySetInnerHTML={{ __html: formatText(formattedContent) }}
     />
   )
 }
