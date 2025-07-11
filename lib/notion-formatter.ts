@@ -2,6 +2,7 @@ import { NotionToMarkdown } from 'notion-to-md'
 import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import type { MdBlock, NotionPost } from './types'
 import { notion } from './notion-client'
+import { formatTitleCase } from '../components/notion-utils'
 
 export async function formatPostFromPage(page: PageObjectResponse): Promise<NotionPost> {
   if (!('properties' in page)) {
@@ -37,6 +38,7 @@ export async function formatPostFromPage(page: PageObjectResponse): Promise<Noti
       }
     }
   }
+  title = formatTitleCase(title)
 
   if ('Slug' in properties && properties.Slug.type === 'rich_text') {
     slug = properties.Slug.rich_text.map((t) => t.plain_text).join('') || ''
