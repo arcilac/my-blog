@@ -86,13 +86,25 @@ export function formatTitleCase(text: string): string {
 export function formatText(text: string) {
   if (!text) return ''
 
+  // First, escape HTML entities inside backticks to prevent them from being interpreted as HTML
+  text = text.replace(/`([^`]*)`/g, (match, content) => {
+    const escapedContent = content
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+    return `<code class="inline-code">${escapedContent}</code>`
+  })
+
+  // Process links
   text = text.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
     '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>',
   )
 
+  // Process bold text
   text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-  text = text.replace(/`(.*?)`/g, '<code class="inline-code">$1</code>')
 
   return text
 }
