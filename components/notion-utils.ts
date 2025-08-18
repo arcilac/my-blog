@@ -86,6 +86,10 @@ export function formatTitleCase(text: string): string {
 export function formatText(text: string) {
   if (!text) return ''
 
+  // Clean up markdown artifacts first - remove quote symbols
+  text = text.replace(/^\*?>\s*/, '') // Remove *> or > at the beginning
+  text = text.replace(/\n\*?>\s*/g, '\n') // Remove *> or > after line breaks
+
   // First, escape HTML entities inside backticks to prevent them from being interpreted as HTML
   text = text.replace(/`([^`]*)`/g, (match, content) => {
     const escapedContent = content
