@@ -84,7 +84,7 @@ export async function formatPostFromPage(page: PageObjectResponse): Promise<Noti
   if ('PublishedDate' in properties && properties.PublishedDate.type === 'date') {
     if (properties.PublishedDate.date) {
       const dateStr = properties.PublishedDate.date.start
-      publishedDate = new Date(dateStr).toLocaleDateString('en-US', {
+      publishedDate = new Date(dateStr + 'T12:00:00').toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
